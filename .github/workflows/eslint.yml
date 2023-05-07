@@ -1,25 +1,25 @@
 name: eslint action
 
-on: 
+on:
   push:
     branches: [main, master]
-  pull_request: 
+  pull_request:
     branches: [main, master]
 
 jobs:
-    eslint: 
-      runs-on: node:14.15.4-alpine3.10
-      steps:
-        - uses: actions/checkout@v2
-        - name: Install dependencies
-          run: npm install
-        - name: Lint with ESLint
-          run: npm run lint
-    prettier: 
-      runs-on: node:14.15.4-alpine3.10
-      steps:
-        - uses: actions/checkout@v2
-        - name: Install dependencies
-          run: npm install
-        - name: Lint with ESLint
-          run: npm run check:format
+  eslint:
+    runs-on: node:14.15.4-alpine3.10
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm install
+      - name: Lint with ESLint
+        run: npm run lint
+  prettier:
+    runs-on: node:14.15.4-alpine3.10
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm install
+      - name: Lint with ESLint
+        run: npm run check:format
