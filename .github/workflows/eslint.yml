@@ -9,13 +9,10 @@ on:
 jobs:
     eslint: 
         runs-on: ubuntu-latest
+        image: node:14.17.0
         steps:
             - uses: actions/checkout@v2
-            - name: Use Node.js 12.x
-              uses: actions/setup-node@v1
-              with:
-                node-version: 14.x
-            - name: Install dependencies
+            - name: Use Node.js 14.17.0
               run: npm install
             - name: Lint with ESLint
-              run: npm run lint 
+              run: npm run lint
