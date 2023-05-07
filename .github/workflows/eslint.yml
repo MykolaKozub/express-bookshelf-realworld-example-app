@@ -16,7 +16,6 @@ jobs:
             - name: use Node.js 12.x
               env:
                 NODE_VERSION: 14.17.0
-              run: nvm install $NODE_VERSION
             - name: install dependencies
               run: npm install
             - name: lint with ESLint
