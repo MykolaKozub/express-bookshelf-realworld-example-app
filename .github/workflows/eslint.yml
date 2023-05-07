@@ -8,8 +8,7 @@ on:
 
 jobs:
   eslint:
-    container:
-      image: node:14.15.4-alpine3.10
+    runs-on: node:14.15.4-alpine3.10
     steps:
       - uses: actions/checkout@v2
       - name: Install dependencies
@@ -17,8 +16,7 @@ jobs:
       - name: Lint with ESLint
         run: npm run lint
   prettier:
-    container:
-      image: node:14.15.4-alpine3.10
+    run-on: node:14.15.4-alpine3.10
     steps:
       - uses: actions/checkout@v2
       - name: Install dependencies
