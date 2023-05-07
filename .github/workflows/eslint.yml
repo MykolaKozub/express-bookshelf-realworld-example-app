@@ -5,12 +5,11 @@ on:
     branches: [main, master]
   pull_request:
     branches: [main, master]
-
+    
 jobs:
   eslint:
     runs-on: ubuntu-latest
-    container: 
-      image: node:14.15.4-alpine3.10
+      image: node:14.17.4
     steps:
       - uses: actions/checkout@v2
       - name: Install dependencies
@@ -19,8 +18,7 @@ jobs:
         run: npm run lint
   prettier:
     runs-on: ubuntu-latest
-    constainer:
-      image: node:14.15.4-alpine3.10
+      image: node:14.17.4
     steps:
       - uses: actions/checkout@v2
       - name: Install dependencies
