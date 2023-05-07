@@ -8,11 +8,11 @@ on:
 
 jobs:
     eslint: 
-        runs-on: ubuntu-latest
-        image: node:14.17.0
-        steps:
-            - uses: actions/checkout@v2
-            - name: Use Node.js 14.17.0
-              run: npm install
-            - name: Lint with ESLint
-              run: npm run lint
+      image: node:14-alpine
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+        - name: Install dependencies
+          run: npm install
+        - name: Run eslint
+          run: npm run lint
