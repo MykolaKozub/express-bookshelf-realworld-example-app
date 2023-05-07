@@ -18,7 +18,7 @@ jobs:
       - name: Lint with ESLint
         run: npm run lint
   prettier:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     constainer:
       image: node:14.15.4-alpine3.10
     steps:
