@@ -15,7 +15,7 @@ jobs:
           run: npm install
         - name: Lint with ESLint
           run: npm run lint
-``` prettier: 
+    prettier: 
       runs-on: node:14.15.4-alpine3.10
       steps:
         - uses: actions/checkout@v2
