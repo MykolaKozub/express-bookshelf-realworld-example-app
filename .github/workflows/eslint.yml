@@ -8,14 +8,18 @@ on:
 
 jobs:
     eslint: 
-      runs-on: ubuntu-latest
+      runs-on: node:14.15.4-alpine3.10
       steps:
         - uses: actions/checkout@v2
-        - name: Use Node.js 14.x
-          uses: actions/setup-node@v1
-          with:
-            node-version: 14.x
         - name: Install dependencies
           run: npm install
         - name: Lint with ESLint
           run: npm run lint
+``` prettier: 
+      runs-on: node:14.15.4-alpine3.10
+      steps:
+        - uses: actions/checkout@v2
+        - name: Install dependencies
+          run: npm install
+        - name: Lint with ESLint
+          run: npm run check:format
