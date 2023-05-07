@@ -9,7 +9,7 @@ on:
 jobs:
   eslint:
     runs-on: ubuntu-latest
-      image: node:14.17.4
+        image: node:14.17.4
     steps:
       - uses: actions/checkout@v2
       - name: Install dependencies
@@ -18,7 +18,7 @@ jobs:
         run: npm run lint
   prettier:
     runs-on: ubuntu-latest
-      image: node:14.17.4
+        image: node:14.17.4
     steps:
       - uses: actions/checkout@v2
       - name: Install dependencies
