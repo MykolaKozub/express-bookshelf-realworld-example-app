@@ -5,24 +5,29 @@ on:
     branches: [main, master]
   pull_request:
     branches: [main, master]
-    
+
 jobs:
   eslint:
     runs-on: ubuntu-latest
-    image: node:14.17.4
     steps:
       - uses: actions/checkout@v2
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
       - name: Install dependencies
         run: npm install
       - name: Lint with ESLint
         run: npm run lint
   prettier:
     runs-on: ubuntu-latest
-    image: node:14.17.4
     steps:
       - uses: actions/checkout@v2
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
       - name: Install dependencies
         run: npm install
-      - name: Lint with ESLint
-        run: npm run check:format
-# save cache use docker volume
+      - name: Lint with Prettier
+        run: npm run prettier
